@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Store | محطات كبس القهوة الاحترافية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        سيتم الاتصال بك قبل الشحن للتأكد من مقاس الـ Portafilter حتى يصلك المنتج المناسب.
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Next Store</div>
+        <div class="nav-actions">
+            <button id="cart-toggle" class="cart-btn" aria-label="سلة المشتريات">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- السلة الجانبية -->
+    <aside id="slide-cart" class="slide-cart hidden">
+        <div class="cart-header">
+            <h2>سلة المشتريات</h2>
+            <button id="close-cart" aria-label="إغلاق السلة"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- المنتجات ستظهر هنا -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary-row">
+                <span>المجموع الفرعي:</span>
+                <span id="cart-subtotal">0.00 DT</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>التوصيل:</span>
+                <span>7.00 DT</span>
+            </div>
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <span id="cart-total-price">0.00 DT</span>
+            </div>
+            <a href="#checkout" class="btn-primary full-width" id="go-to-checkout" style="text-align: center;">إتمام الطلب</a>
+        </div>
+    </aside>
+    <div id="cart-overlay" class="overlay hidden"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Station de Tassage Premium</h1>
+            <p>حافظ على ثبات البورتافلتر (Portafilter) أثناء الكبس واحمِ سطح العمل الخاص بك مع محطاتنا المصممة بدقة متناهية لتجربة باريستا مثالية.</p>
+            <div class="hero-buttons">
+                <a href="#checkout" class="btn-primary">اطلب الآن</a>
+                <a href="#products" class="btn-secondary">تصفح الموديلات</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="products" class="section products-section">
+        <h2 class="section-title">Choisissez votre modèle</h2>
+        
+        <div class="products-grid">
+            
+            <!-- الموديل 1 -->
+            <div class="product-card" data-id="model-a" data-price="60.00" data-name="Modèle A">
+                <div class="product-gallery">
+                    <img src="11.webp" alt="Modèle A" class="main-img">
+                    <div class="thumbnails">
+                        <img src="11.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="12.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="13.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="14.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="15.webp" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle A</h3>
+                    <div class="price">60.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 2 -->
+            <div class="product-card" data-id="model-b" data-price="55.00" data-name="Modèle B">
+                <div class="product-gallery">
+                    <img src="21.webp" alt="Modèle B" class="main-img">
+                    <div class="thumbnails">
+                        <img src="21.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="22.jpg" class="thumb" onclick="changeImage(this)">
+                        <img src="23.webp" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle B</h3>
+                    <div class="price">55.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 3 -->
+            <div class="product-card" data-id="model-c" data-price="50.00" data-name="Modèle C">
+                <div class="product-gallery">
+                    <img src="31.webp" alt="Modèle C" class="main-img">
+                    <div class="thumbnails">
+                        <img src="31.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="32.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="33.jpg" class="thumb" onclick="changeImage(this)">
+                        <img src="34.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="35.webp" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle C</h3>
+                    <div class="price">50.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 4 -->
+            <div class="product-card" data-id="model-d" data-price="40.00" data-name="Modèle D">
+                <div class="product-gallery">
+                    <img src="41.webp" alt="Modèle D" class="main-img">
+                    <div class="thumbnails">
+                        <img src="41.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="42.jpg" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle D</h3>
+                    <div class="price">40.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 5 -->
+            <div class="product-card" data-id="model-e" data-price="45.00" data-name="Modèle E">
+                <div class="product-gallery">
+                    <img src="51.webp" alt="Modèle E" class="main-img">
+                    <div class="thumbnails">
+                        <img src="51.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="52.jpg" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle E</h3>
+                    <div class="price">45.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 6 -->
+            <div class="product-card" data-id="model-f" data-price="45.00" data-name="Modèle F">
+                <div class="product-gallery">
+                    <img src="61.webp" alt="Modèle F" class="main-img">
+                    <div class="thumbnails">
+                        <img src="61.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="62.jpg" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle F</h3>
+                    <div class="price">45.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 7 -->
+            <div class="product-card" data-id="model-g" data-price="35.00" data-name="Modèle G">
+                <div class="product-gallery">
+                    <img src="71.webp" alt="Modèle G" class="main-img">
+                    <div class="thumbnails">
+                        <img src="71.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="72.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="73.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="74.jpg" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle G</h3>
+                    <div class="price">35.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 8 -->
+            <div class="product-card" data-id="model-h" data-price="45.00" data-name="Modèle H">
+                <div class="product-gallery">
+                    <img src="81.jpg" alt="Modèle H" class="main-img">
+                    <div class="thumbnails">
+                        <img src="81.jpg" class="thumb active" onclick="changeImage(this)">
+                        <img src="82.jpg" class="thumb" onclick="changeImage(this)">
+                        <img src="83.webp" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle H</h3>
+                    <div class="price">45.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+            <!-- الموديل 9 -->
+            <div class="product-card" data-id="model-i" data-price="40.00" data-name="Modèle I">
+                <div class="product-gallery">
+                    <img src="91.jpg" alt="Modèle I" class="main-img">
+                    <div class="thumbnails">
+                        <img src="91.jpg" class="thumb active" onclick="changeImage(this)">
+                        <img src="92.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="93.webp" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Modèle I</h3>
+                    <div class="price">40.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+                
+            <!-- الموديل 10 -->
+            <div class="product-card" data-id="Dosing funnel" data-price="20.00" data-name="Dosing funnel">
+                <div class="product-gallery">
+                    <img src="101.webp" alt="Modèle I" class="main-img">
+                    <div class="thumbnails">
+                        <img src="101.webp" class="thumb active" onclick="changeImage(this)">
+                        <img src="102.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="103.webp" class="thumb" onclick="changeImage(this)">
+                        <img src="104.webp" class="thumb" onclick="changeImage(this)">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Dosing funnel</h3>
+                    <div class="price">20.00 DT</div>
+                    <button class="btn-primary open-configurator">تحديد المقاس والطلب</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- نافذة تحديد المقاس -->
+    <div id="config-modal" class="modal hidden">
+        <div class="modal-content glass-effect">
+            <button id="close-modal" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <img id="modal-product-img" src="" style="width: 60px; height: 60px; border-radius: 8px; object-fit: cover;" alt="صورة المنتج Selected">
+                <h3 id="modal-product-name" style="margin:0;">اسم المنتج</h3>
+            </div>
+            
+            <div class="config-section">
+                <h4>1. قس البورتافلتر الخاص بك</h4>
+                <div class="info-card">
+                    <img src="https://i.ibb.co/mCmbd0fk/file-00000000b2088243b95a61b11dfef400.png" alt="طريقة القياس">
+                    <p>قم بقياس القطر الداخلي للبورتافلتر الخاص بك كما هو موضح في الصورة.</p>
+                </div>
+            </div>
+
+            <div class="config-section">
+                <h4>2. اختر المقاس *</h4>
+                <div class="radio-group" id="diameter-selector">
+                    <label class="radio-card">
+                        <input type="radio" name="diameter" value="58mm">
+                        <span class="design"></span>
+                        <span class="text">58 mm</span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="diameter" value="53mm">
+                        <span class="design"></span>
+                        <span class="text">53 mm</span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="diameter" value="51mm">
+                        <span class="design"></span>
+                        <span class="text">51 mm</span>
+                    </label>
+                </div>
+                <p id="diameter-error" class="error-msg hidden">يرجى اختيار المقاس.</p>
+            </div>
+
+            <div class="config-section">
+                <h4>3. موديل آلة القهوة <span class="optional">(اختياري)</span></h4>
+                <input type="text" id="machine-model" class="input-field" placeholder="مثال: Delonghi Dedica, Breville...">
+            </div>
+
+            <div class="guarantee-box">
+                <h5>لا تقلق إذا كنت غير متأكد!</h5>
+                <p>قبل شحن طلبك، سنتواصل معك شخصياً هاتفياً للتأكد من:</p>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> مقاس البورتافلتر المناسب</li>
+                    <li><i class="fa-solid fa-circle-check"></i> موديل آلة القهوة الخاصة بك</li>
+                </ul>
+                <p class="mb-0">هذا يضمن وصول المنتج المطابق تماماً لآلتك.</p>
+            </div>
+
+            <div class="config-section add-actions">
+                <div class="qty-selector">
+                    <button class="qty-btn" id="qty-plus">+</button>
+                    <input type="number" id="qty-input" value="1" min="1" readonly>
+                    <button class="qty-btn" id="qty-minus">-</button>
+                </div>
+                <button class="btn-primary" id="add-to-cart-confirm" style="flex:1; border-radius: 8px;">أضف إلى السلة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم الثقة -->
+    <section class="section trust-section bg-dark">
+        <h2 class="section-title text-white">لماذا تختار منتجاتنا؟</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <i class="fa-solid fa-star"></i>
+                <h4>جودة تصنيع عالية</h4>
+                <p>هيكل متين وقوي يتحمل الاستخدام اليومي.</p>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-compress"></i>
+                <h4>دقة متناهية</h4>
+                <p>مصممة هندسياً لتطابق مقاساتك بالمليمتر.</p>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h4>مواد ممتازة</h4>
+                <p>مصنوعة من مواد آمنة وعالية التحمل.</p>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>توصيل سريع</h4>
+                <p>توصيل لباب المنزل في كافة الولايات.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- إتمام الطلب -->
+    <section id="checkout" class="section checkout-section">
+        <h2 class="section-title">أكمل طلبك الآن</h2>
+        <div class="checkout-container">
+            <form id="checkout-form" class="checkout-form">
+                <h3>معلومات التوصيل</h3>
+                <input type="text" id="fullname" placeholder="الاسم واللقب *" required>
+                <input type="tel" id="phone" placeholder="رقم الهاتف (8 أرقام) *" pattern="[0-9]{8}" title="الرجاء إدخال 8 أرقام فقط" required>
+                <input type="text" id="state" placeholder="الولاية / المدينة *" required>
+                <input type="text" id="address" placeholder="العنوان بالتفصيل *" required>
+                <textarea id="notes" placeholder="ملاحظات  (اختياري)" rows="3"></textarea>
+
+                <div class="payment-info">
+                    <h4>طريقة الدفع</h4>
+                    <div class="cod-box">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        <span>الدفع عند الاستلام (تدفع فقط عندما يصلك المنتج)</span>
+                    </div>
+                </div>
+
+                <div class="checkout-actions">
+                    <button type="submit" class="btn-primary full-width large-btn">تأكيد الطلب</button>
+                    <button type="button" id="whatsapp-order" class="btn-whatsapp full-width large-btn mt-10">
+                        <i class="fa-brands fa-whatsapp"></i> اطلب عبر WhatsApp
+                    </button>
+                </div>
+            </form>
+
+            <div class="order-summary-box">
+                <h3>ملخص الطلب</h3>
+                <div id="summary-items">
+                    <p class="empty-summary">سلة المشتريات فارغة.</p>
+                </div>
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>المجموع الفرعي:</span>
+                        <span id="summary-subtotal">0.00 DT</span>
+                    </div>
+                    <div class="summary-row delivery-fee">
+                        <span>رسوم التوصيل:</span>
+                        <span>7.00 DT</span>
+                    </div>
+                </div>
+                <div class="summary-total">
+                    <strong>الإجمالي المطلوب:</strong>
+                    <strong id="summary-total-price">0.00 DT</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>Next Store</h2>
+                <p>نرتقي بتجربة تحضير القهوة الخاصة بك.</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fa-solid fa-phone"></i> +216 55 100 046</p>
+                <p><i class="fa-solid fa-envelope"></i> elitecoffeegear@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Next Store. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
